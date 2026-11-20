@@ -1,0 +1,44 @@
+/* ===== Scene 06 — constellation of wishes ===== */
+.cs-scene { justify-content: flex-start; padding-inline: 8px; }
+.cs-head { flex: none; gap: 2px; padding-inline: 12px; }
+.cs-head .h-title { font-size: clamp(1.4rem, 6.2vw, 2.1rem); }
+.cs-hint { font-size: .86rem; opacity: 0; transition: opacity 1s var(--ease-soft); min-height: 1.9em; }
+.cs-hint.on { opacity: 1; }
+.cs-sky { position: relative; flex: 1; min-height: 0; width: 100%; max-width: 560px; }
+.cs-svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+
+.cs-line { stroke: #C7A76A; stroke-width: .28; stroke-linecap: round; opacity: .7; stroke-dasharray: 1; stroke-dashoffset: 1; animation: cs-draw 1.1s var(--ease-soft) forwards; transition: stroke-width 1.2s, opacity 1.2s; }
+@keyframes cs-draw { to { stroke-dashoffset: 0; } }
+.is-finale .cs-line { stroke-width: .5; opacity: 1; }
+
+.cs-pop { transform-box: fill-box; transform-origin: center; opacity: 0; transform: scale(0); animation: cs-in 1.4s var(--ease-spring) forwards; }
+@keyframes cs-in { to { opacity: var(--op, 1); transform: scale(1); } }
+.is-finale .cs-pop { opacity: 1; animation: none; transform: scale(1); transition: opacity 1.4s; }
+.cs-drift { animation: cs-drift 9s ease-in-out infinite alternate; }
+@keyframes cs-drift { from { transform: translate(-.35px, .25px); } to { transform: translate(.4px, -.35px); } }
+.is-formed .cs-drift { animation: none; }
+.cs-shape { transform-box: fill-box; transform-origin: center; animation: cs-tw 3s ease-in-out infinite; filter: drop-shadow(0 0 .4px rgba(199,167,106,.9)); }
+@keyframes cs-tw { 0%, 100% { opacity: 1; } 50% { opacity: .6; } }
+.cs-halo { opacity: .55; transition: opacity 1.4s; }
+.is-finale .cs-halo { opacity: 1; }
+.is-finale .cs-shape { animation: none; opacity: 1; }
+
+.cs-special .cs-hit { cursor: pointer; }
+.cs-special .cs-ring { transform-box: fill-box; transform-origin: center; animation: cs-ring 2.4s ease-out infinite; }
+@keyframes cs-ring { 0% { transform: scale(.7); opacity: .9; } 100% { transform: scale(1.7); opacity: 0; } }
+.cs-special.is-on .cs-ring { animation: none; opacity: .9; transform: scale(1); }
+.cs-special.is-on .cs-shape { fill: #B8935A; }
+.is-finale .cs-special .cs-ring { animation: none; opacity: 0; }
+
+.cs-final { flex: none; min-height: 4.6rem; justify-content: center; }
+.cs-toast { font-size: clamp(1.4rem, 6.4vw, 2.1rem); }
+.cs-toast-ph { display: block; }
+
+.cs-overlay { position: absolute; inset: 0; z-index: 12; display: grid; place-items: center; padding: 24px; background: rgba(251,250,247,.45); animation: k-fade .5s both; }
+.cs-note { position: relative; width: min(100%, 320px); padding: 26px 24px 14px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 8px;
+  background: linear-gradient(180deg, #fff, #FBF8F1); box-shadow: 0 0 0 1px rgba(199,167,106,.65), 0 30px 50px -22px rgba(54,38,31,.5), 0 4px 10px rgba(54,38,31,.08);
+  animation: cs-note-in .9s var(--ease-spring) both; }
+.cs-note::before { content: ""; position: absolute; inset: 7px; border: 1px solid rgba(199,167,106,.4); pointer-events: none; }
+.cs-note p { margin: 0; font-size: 1.28rem; color: var(--brown-primary); line-height: 1.95; font-weight: 700; text-wrap: balance; }
+.cs-ok { margin-top: 2px; }
+@keyframes cs-note-in { from { opacity: 0; transform: translateY(24px) scale(.88) rotate(-1.5deg); } to { opacity: 1; transform: none; } }

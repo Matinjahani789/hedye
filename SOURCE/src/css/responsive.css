@@ -1,0 +1,18 @@
+/* Responsive refinements (mobile-first; base styles target portrait phones) */
+@media (max-height: 620px) {
+  .scene { padding-top: calc(var(--sat) + 44px); padding-bottom: calc(var(--sab) + 12px); }
+  .h-title { font-size: clamp(1.3rem, 5.4vw, 1.8rem); }
+}
+@media (max-width: 340px) {
+  .btn { min-width: 96px; padding: 0 20px; font-size: 1rem; }
+}
+@media (min-width: 768px) {
+  .scene { padding-inline: 32px; }
+  .h-title { font-size: 2.4rem; }
+}
+@media (min-width: 1280px) {
+  .h-title { font-size: 2.7rem; }
+}
+@media (orientation: landscape) and (max-height: 520px) {
+  .progress { top: calc(var(--sat) + 6px); }
+}

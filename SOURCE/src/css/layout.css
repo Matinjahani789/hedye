@@ -1,0 +1,11 @@
+/* Layout primitives: refined central column on wide screens, edge-to-edge on phones */
+.col { width: 100%; max-width: 520px; margin-inline: auto; display: flex; flex-direction: column; align-items: center; }
+.col-wide { width: 100%; max-width: 920px; margin-inline: auto; }
+.stack-4 > * + * { margin-top: 1rem; }
+.stack-6 > * + * { margin-top: 1.5rem; }
+.center-fill { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; min-height: 0; }
+.stage { position: absolute; inset: 0; padding: calc(var(--sat) + 56px) calc(var(--sar) + 16px) calc(var(--sab) + 22px) calc(var(--sal) + 16px); }
+/* 3D helpers */
+.p3d { transform-style: preserve-3d; }
+.abs-fill { position: absolute; inset: 0; }
+.fit-box { position: relative; transform-origin: center center; flex: none; }

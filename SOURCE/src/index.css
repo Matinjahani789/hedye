@@ -1,0 +1,15 @@
+@import "tailwindcss";
+@import "@fontsource-variable/vazirmatn/index.css";
+@import "@fontsource-variable/noto-naskh-arabic/index.css";
+@import "./css/main.css";
+@import "./css/typography.css";
+@import "./css/layout.css";
+@import "./css/birthday-scenes.css";
+@import "./css/animations/cake.css";
+@import "./css/animations/gift.css";
+@import "./css/animations/constellation.css";
+@import "./css/animations/celebration.css";
+@import "./css/calendar.css";
+@import "./css/gallery.css";
+@import "./css/responsive.css";
+@import "./css/accessibility.css";

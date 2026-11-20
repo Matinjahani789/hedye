@@ -1,0 +1,13 @@
+/* Persian typography — locally bundled fonts only (Vazirmatn + Noto Naskh Arabic) */
+:root {
+  --font-sans: "Vazirmatn Variable", "Vazirmatn", "Noto Naskh Arabic Variable", Tahoma, system-ui, sans-serif;
+  --font-display: "Noto Naskh Arabic Variable", "Noto Naskh Arabic", "Vazirmatn Variable", serif;
+}
+html { font-family: var(--font-sans); font-feature-settings: "kern", "liga", "calt"; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+body { font-size: 16px; line-height: 1.9; letter-spacing: 0; }
+.display { font-family: var(--font-display); font-weight: 600; line-height: 1.7; }
+
+.h-title { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.55rem, 6.6vw, 2.3rem); line-height: 1.75; color: var(--brown-primary); text-align: center; margin: 0; text-wrap: balance; }
+.h-sub { font-size: clamp(.95rem, 3.8vw, 1.12rem); color: var(--text-secondary); text-align: center; margin: 0; line-height: 2; text-wrap: balance; }
+.kicker { font-size: .78rem; letter-spacing: 0; color: var(--gold); font-weight: 600; text-align: center; }
+.num { font-feature-settings: "kern"; font-variant-numeric: normal; }
